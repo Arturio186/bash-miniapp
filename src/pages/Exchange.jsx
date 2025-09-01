@@ -127,6 +127,10 @@ const Exchange = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const { initData } = retrieveLaunchParams();
+
+    console.log({initData})
+
     const errors = {};
   
     if (!formData.date) errors.date = 'Дата обязательна';
@@ -143,10 +147,6 @@ const Exchange = () => {
       setErrors(errors);
       return;
     }
-
-    const { initData } = retrieveLaunchParams();
-
-    console.log({initData})
 
     const application = {
       time: formData.time,
