@@ -28,9 +28,9 @@ const features = [
 ];
 
 const About = () => {
-  const { initData } = retrieveLaunchParams();
+  const params = retrieveLaunchParams();
   
-  console.log({initData})
+  console.log({params})
 
   return (
     <Template 
