@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, Typography, Paper, Stack, Avatar, Divider} from '@mui/material';
 import {Groups, HelpOutline, Star, VerifiedUser, Business} from '@mui/icons-material';
-Business
+import {retrieveLaunchParams} from '@telegram-apps/sdk';
 import Template from './Template';
 
 const features = [
@@ -28,6 +28,10 @@ const features = [
 ];
 
 const About = () => {
+  const { initData } = retrieveLaunchParams();
+  
+  console.log({initData})
+
   return (
     <Template 
       content={
