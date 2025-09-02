@@ -127,10 +127,6 @@ const Exchange = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const { initData } = retrieveLaunchParams();
-
-    console.log({initData})
-
     const errors = {};
   
     if (!formData.date) errors.date = 'Дата обязательна';
@@ -148,6 +144,8 @@ const Exchange = () => {
       return;
     }
 
+    const params = retrieveLaunchParams();
+
     const application = {
       time: formData.time,
       network: formData.network,
@@ -155,7 +153,8 @@ const Exchange = () => {
       type: parseInt(formData.type),
       address: formData.address,
       date: formData.date,
-      tg_username: 'aa' // initData.user.username
+      tg_username: params?.tgWebAppData?.user?.username,
+      chat_id: params?.tgWebAppData?.user?.id
     };
 
     (async() => {
