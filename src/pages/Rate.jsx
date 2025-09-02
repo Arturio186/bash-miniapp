@@ -1,6 +1,8 @@
+
+import axios from 'axios';
+
 import React, {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
-import axios from 'axios';
 import {Button, Box, Typography, Paper, Stack, Grid, useTheme} from '@mui/material';
 import {TrendingUp, Paid, SwapHoriz} from '@mui/icons-material';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -38,7 +40,8 @@ const Rate = () => {
       } catch (err) {
         alert(err);
         alert(err.message);
-        alert(err.response?.data?.message);
+        alert(err.response);
+        alert(err.response?.data);
         setIsError(true);
       } finally {
         setIsLoading(false);
