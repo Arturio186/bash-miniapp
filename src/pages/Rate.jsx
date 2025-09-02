@@ -36,6 +36,9 @@ const Rate = () => {
           change: usdtRate.change || 0
         });
       } catch (err) {
+        alert(err);
+        alert(err.message);
+        alert(err.response?.data?.message);
         setIsError(true);
       } finally {
         setIsLoading(false);
